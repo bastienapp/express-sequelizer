@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/sequelize');
 
-// Model contains methods: findAll, findOne, create, update, destroy
+// contains methods: findAll, findOne, create, update, destroy
 const Todo = sequelize.define('todo', {
   content: {
     type: DataTypes.STRING,
@@ -12,5 +12,7 @@ const Todo = sequelize.define('todo', {
     defaultValue: false,
   },
 });
+// create database if not exists
+Todo.sync();
 
 module.exports = Todo;
