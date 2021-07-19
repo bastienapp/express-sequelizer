@@ -1,0 +1,6 @@
+node_modules
+.env
+# Bastien le fait mais c'est pas forcément bien
+package-lock.json
+
+database.sqlite
