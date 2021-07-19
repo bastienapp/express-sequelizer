@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../config/sequelize');
 
-// Model contient les méthodes findAll, findOne, create, update, destroy?
+// Model contains methods: findAll, findOne, create, update, destroy
 class Todo extends Sequelize.Model {}
 Todo.init(
   {
