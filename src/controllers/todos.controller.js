@@ -1,14 +1,14 @@
 const { Op } = require('sequelize');
 const Todo = require('../models/todos.model');
-Todo.sync();
 /*
 // force drop database and create a new element on server restart
 Todo.sync({ force: true }).then(() => {
   return Todo.create({
-    content: 'tacos',
+    content: 'example',
   });
 });
 */
+Todo.sync();
 
 const findAll = (request, response) => {
   Todo.findAll()
