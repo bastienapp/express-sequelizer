@@ -65,18 +65,15 @@ const create = (request, response) => {
 
 const update = (request, response) => {
   const { id } = request.params;
-  const updateTodo = request.body;
-  Todo.findOne({
+  const update = request.body;
+  Todo.update(update, {
     where: {
       id: id,
     },
   })
-    .then((todo) => {
-      if (todo) {
-        todo
-          .update(updateTodo)
-          .then(() => response.sendStatus(204))
-          .catch((error) => response.status(500).send(error));
+    .then((result) => {
+      if (result && result[0] > 0) {
+        response.sendStatus(204);
       } else {
         response.sendStatus(404);
       }
